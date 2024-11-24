@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+/* font-family: "Roboto", sans-serif;
+font-family: "Inter", serif;     */
+
+
+body {
+    margin: 0;
+    display: flex;   
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: "Inter", serif;   
+    color: #E1E5F2;
+    background-color: #bbcbcf;
+}
+
+
+h1 {
+    font-size: 48px ;
+
+}
+.container {
+    background-color: #022B3A;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,.3);
+    text-align: center;
+    width: 400px;
+    height: 120px;
+    transition: width 0.6s ease-in-out, height 0.6s ease-in-out;
+}
+
+.container:hover {
+    width: 600px;
+    height: 500px;
+}
+
+.container:not(:hover) {
+    transition-delay: 0.2s;
+}
+
+
+#weather-data, .details, .more-details {
+    opacity: 0; /* Initially hidden */
+    transform: translateY(10px); /* Slight slide-in animation */
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    transition-delay: 0.2s;
+}
+
+input {
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.container:hover #weather-data,
+.container:hover .details,
+.container:hover .more-details {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Return to natural position */
+    transition-delay: 0.2s;
+}
+
+.container:not(:hover) #weather-data,
+.container:not(:hover) .details,
+.container:not(:hover) .more-details {
+    opacity: 0; /* Fully hidden */
+    transform: translateY(10px); /* Slide out */
+    transition-delay: 0s; /* No delay when hiding */
+}
+
+
+.icon img {
+    width: 80px;
+    height: 80px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.temperature {
+    font-size: 36px;
+    font-weight: bold; 
+    margin: 20px 0;
+}
+
+.description {
+    font-size: 28px;
+    margin: 20px;
+}
+
+.more-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.more-details > div {
+    padding: 20px;
+    background-color: #03394c;
+    margin: 10px;
+    flex: 1;
+    border-radius: 10px;
+}
+
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px ;
+}
+
+form input[type="text"] {
+    opacity: 0;
+    padding: 10px;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    font-family: "Roboto", sans-serif; 
+    font-size: 22px;  
+    width: 60%;
+    margin-right: 3px;
+    
+}
+form input[type="submit"] {
+    background-color: #1F7A8C;
+    opacity: 0;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    font-family: "Roboto", sans-serif;
+    font-size: 22px; 
+    width: 40%;
+    cursor: pointer;
+    transition-property: background-color;
+}
+
+form input[type='submit']:hover {
+    background-color: #f1f4fc;
+}
+
+.container:hover form input[type='submit'] {
+    opacity: 1;
+}
+.container:hover form input[type='text'] {
+    opacity: .85;
+}
+
+.container:not(:hover) form input[type='text'],
+.container:not(:hover) form input[type='submit'] {
+    opacity: 0; /* Fully hidden */
+    transition-delay: 0s; /* No delay when hiding */
+}
