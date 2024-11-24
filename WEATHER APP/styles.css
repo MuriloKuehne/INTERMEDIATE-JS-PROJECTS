@@ -3,12 +3,19 @@
 font-family: "Inter", serif;     */
 
 
-body {
+
+html, body {
     margin: 0;
+    height: 100%;
+    overflow: hidden;
+    padding: 0;
+}
+
+body {
+    
     display: flex;   
     justify-content: center;
     align-items: center;
-    height: 100vh;
     font-family: "Inter", serif;   
     color: #E1E5F2;
     background-color: #bbcbcf;
@@ -32,7 +39,8 @@ h1 {
 
 .container:hover {
     width: 600px;
-    height: 500px;
+    height: 520px;
+
 }
 
 .container:not(:hover) {
@@ -44,7 +52,7 @@ h1 {
     opacity: 0; /* Initially hidden */
     transform: translateY(10px); /* Slight slide-in animation */
     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-    transition-delay: 0.2s;
+    /* transition-delay: 0.2s; */
 }
 
 input {
@@ -100,6 +108,8 @@ input {
     margin: 10px;
     flex: 1;
     border-radius: 10px;
+    text-align: center;
+    min-height: 45px;
 }
 
 
@@ -133,22 +143,36 @@ form input[type="submit"] {
     font-size: 22px; 
     width: 40%;
     cursor: pointer;
-    transition-property: background-color;
+    transition-property: background-color, opacity; 
 }
 
 form input[type='submit']:hover {
     background-color: #f1f4fc;
+    transition-delay: 0ms;
 }
 
 .container:hover form input[type='submit'] {
     opacity: 1;
+    
 }
 .container:hover form input[type='text'] {
     opacity: .85;
+    
 }
 
 .container:not(:hover) form input[type='text'],
 .container:not(:hover) form input[type='submit'] {
     opacity: 0; /* Fully hidden */
     transition-delay: 0s; /* No delay when hiding */
+}
+
+@media (max-width: 768px) {
+    form {
+        flex-direction: column;
+    }
+
+    form input[type='text']{
+        width: 100%;
+        margin-bottom: 10px;
+    }
 }
