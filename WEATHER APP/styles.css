@@ -48,7 +48,7 @@ h1 {
 }
 
 
-#weather-data, .details, .more-details {
+#weather-data, .details{
     opacity: 0; /* Initially hidden */
     transform: translateY(10px); /* Slight slide-in animation */
     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
@@ -61,7 +61,8 @@ input {
 
 .container:hover #weather-data,
 .container:hover .details,
-.container:hover .more-details {
+.container:hover .temperature,
+.container:hover .description {
     opacity: 1; /* Fully visible */
     transform: translateY(0); /* Return to natural position */
     transition-delay: 0.2s;
@@ -69,7 +70,8 @@ input {
 
 .container:not(:hover) #weather-data,
 .container:not(:hover) .details,
-.container:not(:hover) .more-details {
+.container:not(:hover) .temperature,
+.container:not(:hover) .description {
     opacity: 0; /* Fully hidden */
     transform: translateY(10px); /* Slide out */
     transition-delay: 0s; /* No delay when hiding */
@@ -95,14 +97,14 @@ input {
     margin: 20px;
 }
 
-.more-details {
+.details {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
 }
 
-.more-details > div {
+.details > div {
     padding: 20px;
     background-color: #03394c;
     margin: 10px;
